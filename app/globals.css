@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold:       #C9A84C;
+    --gold-light: #fde68a;
+    --gold-dark:  #B8860B;
+    --blush:      #F4A0BD;
+    --blush-light:#fff0f5;
+    --cream:      #FDF8F3;
+    --ink:        #1a1410;
+    --muted:      #8a7060;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  * { box-sizing: border-box; }
+
+  ::selection {
+    background: rgba(201, 168, 76, 0.25);
+    color: #1a1410;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #FDF8F3; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #C9A84C, #F4A0BD);
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .gold-text {
+    background: linear-gradient(135deg, #C9A84C 0%, #fcd34d 40%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-border {
+    border: 1px solid rgba(201, 168, 76, 0.3);
+  }
+
+  .luxury-card {
+    @apply bg-white rounded-2xl gold-border shadow-gold-sm
+           transition-all duration-300 hover:shadow-gold-md
+           hover:-translate-y-0.5;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-5 py-2.5
+           rounded-xl font-body font-medium text-sm
+           text-ink transition-all duration-200
+           hover:shadow-gold-md active:scale-95;
+    background: linear-gradient(135deg, #C9A84C 0%, #fde68a 50%, #B8860B 100%);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+  }
+
+  .btn-gold:hover {
+    background-position: 100% 50%;
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center gap-2 px-5 py-2.5
+           rounded-xl font-body font-medium text-sm
+           border border-gold-500/40 text-gold-600
+           bg-transparent transition-all duration-200
+           hover:bg-gold-50 hover:border-gold-500
+           active:scale-95;
+  }
+
+  .input-luxury {
+    @apply w-full px-4 py-3 rounded-xl
+           bg-white border border-gold-200/60
+           text-ink placeholder-muted/50
+           font-body text-sm
+           transition-all duration-200
+           focus:outline-none focus:border-gold-400
+           focus:ring-2 focus:ring-gold-200/40;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl md:text-4xl font-light tracking-wide
+           text-ink/90;
+  }
+
+  .divider-gold {
+    @apply h-px w-16 mx-auto;
+    background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+  }
+
+  .badge-vip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1
+           rounded-full text-xs font-body font-medium
+           tracking-widest uppercase;
+    background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(244,160,189,0.12));
+    border: 1px solid rgba(201,168,76,0.3);
+    color: #B8860B;
+  }
+
+  .promo-code {
+    @apply font-mono text-sm font-medium tracking-widest
+           px-4 py-2 rounded-lg
+           bg-gradient-to-r from-gold-50 to-blush-50
+           border border-gold-200/50
+           text-gold-700 cursor-pointer
+           hover:border-gold-400 transition-all;
+  }
+}
+
+@layer utilities {
+  .text-muted { color: var(--muted); }
+
+  .glass {
+    background: rgba(253, 248, 243, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-dark {
+    background: rgba(26, 20, 16, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
+}
