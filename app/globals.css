@@ -75,7 +75,7 @@
   .input-luxury {
     @apply w-full px-4 py-3 rounded-xl
            bg-white border border-gold-200/60
-           text-ink placeholder-muted/50
+           text-ink placeholder-gray-400
            font-body text-sm
            transition-all duration-200
            focus:outline-none focus:border-gold-400
