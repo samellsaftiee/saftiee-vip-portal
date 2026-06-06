@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase";
 
-export const config = { api: { bodyParser: false } };
+export const runtime = 'nodejs';
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
