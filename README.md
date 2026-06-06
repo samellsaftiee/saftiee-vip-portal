@@ -4,6 +4,7 @@ Portail VIP exclusif pour les conductrices Saftiee — accès par QR code.
 
 **Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · Supabase · NextAuth · Vercel
 
+
 ---
 
 ## ✨ Fonctionnalités
