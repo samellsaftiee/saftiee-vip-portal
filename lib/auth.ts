@@ -1,6 +1,5 @@
 import NextAuth, { type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
 
 export const authOptions: NextAuthOptions = {
   secret: "saftiee2024secret",
@@ -14,11 +13,7 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
         if (credentials.email !== "admin@saftiee.dz") return null;
-        const valid = await bcrypt.compare(
-          credentials.password,
-          "$2b$10$Kw20enuJj8lA9fiOAuU85uvpd27G8pG8Qyie8auyw8CJ8R7CkBNDW"
-        );
-        if (!valid) return null;
+        if (credentials.password !== "sookool99@") return null;
         return { id: "admin", email: "admin@saftiee.dz", name: "Administrateur" };
       },
     }),
